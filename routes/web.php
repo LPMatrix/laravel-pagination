@@ -11,15 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('login', function(){
 	return view('login');
 });
-Route::get('users', ['uses'=>'UsersController@index']);
+Route::get('/', ['uses'=>'UsersController@index']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
-Route::get('todo', ['uses'=>'UsersController@user']);
